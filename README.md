@@ -1,1 +1,1 @@
-# js-pingpong
+# pingpong
