@@ -1,14 +1,36 @@
+let cor
+let posicaoHorizontal // x
+let posicaoVertical //y
+
 function setup() {
-  // cria uma tela de 400px de largura
   createCanvas(400, 400);
-  background("white");
+  background(color(100,0,0))
+  cor = color(random(0,255),random(0,255),random (0,255))
+  posicaoHorizontal = 200
+  posicaoVertical = 200
 }
 
 function draw() {
-  stroke("blue")
-  fill("red")
+  fill(cor)
+  circle(posicaoHorizontal,posicaoVertical,50)
   
- if(mouseIsPressed) { 
-  rect(mouseX,mouseY,20,35)
- }
-} 
+  if(mouseX < posicaoHorizontal){
+    posicaoHorizontal --
+  }
+  
+  if(mouseX > posicaoHorizontal){
+    posicaoHorizontal ++
+  }
+  
+  if(mouseY < posicaoVertical){
+    posicaoVertical --
+  }
+  
+  if(mouseY > posicaoVertical){
+    posicaoVertical ++
+  }
+  
+  if(mouseIsPressed){
+    cor = color(random(0,255),random(0,255),random(0,255),random(0,100))
+  }
+}
